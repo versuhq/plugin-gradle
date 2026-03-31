@@ -49,6 +49,7 @@ const runner = new VersuRunner({
   repoRoot: '/path/to/repository',
   plugins: [gradlePlugin],
   adapter: 'gradle', // Optional - auto-detected
+  // ...other options as needed
 });
 
 const result = await runner.run();
