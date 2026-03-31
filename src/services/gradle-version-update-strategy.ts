@@ -1,9 +1,9 @@
 import { join } from "path";
 import { GRADLE_PROPERTIES_FILE } from "../constants.js";
 import {
-  ModuleRegistry,
+  type ModuleRegistry,
   upsertProperties,
-  VersionUpdateStrategy,
+  type VersionUpdateStrategy,
 } from "@versu/core";
 
 /**

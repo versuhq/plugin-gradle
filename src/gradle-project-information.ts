@@ -5,15 +5,15 @@ import fs from "fs/promises";
 import crypto from "crypto";
 import fg from "fast-glob";
 import {
-  BaseModule,
+  type BaseModule,
   createInitialVersion,
   exists,
   logger,
-  Module,
+  type Module,
   parseProperties,
   parseSemVer,
-  ProjectInformation,
-  RawProjectInformation,
+  type ProjectInformation,
+  type RawProjectInformation,
 } from "@versu/core";
 
 type Mutable<T> = {

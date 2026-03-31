@@ -7,7 +7,7 @@ import {
   GRADLE_SETTINGS_KTS_FILE,
   GRADLE_ID,
 } from "../constants.js";
-import { AdapterIdentifier, exists, logger } from "@versu/core";
+import { type AdapterIdentifier, exists, logger } from "@versu/core";
 
 /** List of file names that indicate a Gradle project. */
 const GRADLE_FILES = [
