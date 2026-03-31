@@ -171,6 +171,7 @@ const runner = new VersuRunner({
   repoRoot: '/path/to/repository',
   adapter: 'gradle',
   appendSnapshot: true, // Generates versions like 1.2.3-SNAPSHOT
+  // ...other options as needed
 });
 ```
 
@@ -188,14 +189,14 @@ The plugin automatically activates when any of these files are present in the re
 The plugin implements the Versu plugin contract:
 
 ```typescript
-interface PluginContract {
+export type PluginContract = {
   id: string;
   name: string;
   description: string;
   version: string;
-  author: string | string[];
+  author: string;
   adapters: AdapterPluginContract[];
-}
+};
 ```
 
 ### Components
@@ -216,22 +217,12 @@ interface PluginContract {
 ### Building
 
 ```bash
-# From monorepo root
-npm run build
-
-# Or from plugin package
-cd packages/plugin-gradle
 npm run build
 ```
 
 ### Testing
 
 ```bash
-# From monorepo root
-npm test
-
-# Or from plugin package
-cd packages/plugin-gradle
 npm test
 npm run test:coverage
 ```
@@ -239,14 +230,14 @@ npm run test:coverage
 ### Publishing
 
 ```bash
-npm publish --workspace packages/plugin-gradle --access public
+npm publish --access public
 ```
 
 ## Related Packages
 
-- **[@versu/core](../core)** - Core library for programmatic usage
-- **[@versu/cli](../cli)** - Command-line interface
-- **[@versu/action](../action)** - GitHub Actions integration
+- **[@versu/core][versu]** - Core library for programmatic usage
+- **[@versu/cli][versu]** - Command-line interface
+- **[@versu/action][versu]** - GitHub Actions integration
 
 ## Requirements
 
@@ -257,3 +248,5 @@ npm publish --workspace packages/plugin-gradle --access public
 ## License
 
 MIT License - see [LICENSE](../../LICENSE) for details.
+
+[versu]: https://github.com/versuhq/versu
