@@ -241,7 +241,7 @@ npm publish --access public
 
 ## Requirements
 
-- **Node.js**: >= 20
+- **Node.js**: >= 24
 - **Gradle**: >= 6.0 (tested with Gradle 6.x - 8.x)
 - **Java**: Required for running Gradle
 

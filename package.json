@@ -1,6 +1,6 @@
 {
   "name": "@versu/plugin-gradle",
-  "version": "0.11.0",
+  "version": "1.0.0",
   "description": "Versu Gradle Plugin",
   "type": "module",
   "main": "dist/index.js",
@@ -17,9 +17,9 @@
     "build:cjs": "tsc --project tsconfig.cjs.json --outDir dist && npm run copy-assets",
     "test": "vitest --passWithNoTests",
     "test:coverage": "vitest --coverage --passWithNoTests",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint 'src/**/*.ts'",
     "format": "prettier --write src/**/*.ts",
-    "copy-assets": "cpx \"src/init-project-information.gradle.kts\" \"dist/\""
+    "copy-assets": "shx cp src/init-project-information.gradle.kts dist/"
   },
   "keywords": [
     "versu",
@@ -50,22 +50,26 @@
     "fast-glob": "^3.3.3"
   },
   "peerDependencies": {
-    "@versu/core": "^0.13.0"
+    "@versu/core": "^2.0.0"
   },
   "devDependencies": {
-    "@versu/core": "^0.13.0",
-    "@types/node": "^20.19.23",
+    "@versu/core": "^2.0.0",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.13.2",
     "@types/semver": "^7.7.1",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "@vitest/coverage-v8": "^1.1.0",
-    "cpx": "^1.5.0",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1",
-    "typescript": "^5.3.3",
-    "vitest": "^1.1.0"
+    "@vitest/coverage-v8": "^4.1.9",
+    "shx": "^0.4.0",
+    "eslint": "^10.5.0",
+    "globals": "^17.6.0",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1",
+    "vitest": "^4.1.9"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24"
+  },
+  "allowScripts": {
+    "fsevents@2.3.3": true
   }
 }

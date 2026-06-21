@@ -254,10 +254,9 @@ async function getInformationWithVersions(
   const gradlePropertiesFile = join(projectRoot, "gradle.properties");
   const gradlePropertiesExists = await exists(gradlePropertiesFile);
   const result: Mutable<RawProjectInformation> = {};
-  let moduleVersions = new Map<string, string>();
 
   if (gradlePropertiesExists) {
-    moduleVersions = await parseProperties(gradlePropertiesFile);
+    const moduleVersions = await parseProperties(gradlePropertiesFile);
 
     for (const [moduleId, module] of Object.entries(projectInformation)) {
       const version = moduleVersions.get(module.versionProperty);
