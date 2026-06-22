@@ -9,12 +9,12 @@ const gradlePlugin: PluginContract = {
   description:
     "Adapter plugin for Gradle build system. Provides support for detecting and updating versions in Gradle projects.",
   version: VERSION,
-  author: AUTHORS,
+  authors: AUTHORS,
   adapters: [
     {
       id: "gradle",
-      adapterIdentifier: () => new GradleAdapterIdentifier(),
-      moduleSystemFactory: (repoRoot: string) =>
+      adapterIdentifier: async(_configDirectory: string) => new GradleAdapterIdentifier(),
+      moduleSystemFactory: async(repoRoot: string, _configDirectory: string) =>
         new GradleModuleSystemFactory(repoRoot),
     },
   ],

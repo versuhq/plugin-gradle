@@ -20,7 +20,7 @@ export class GradleModuleSystemFactory implements ModuleSystemFactory {
    * @param outputFile - Path to the output file for project information
    * @returns GradleModuleDetector instance configured with the repository root
    */
-  createDetector(outputFile: string): ModuleDetector {
+  async createDetector(outputFile: string): Promise<ModuleDetector> {
     return new GradleModuleDetector(this.repoRoot, outputFile);
   }
 
@@ -29,9 +29,9 @@ export class GradleModuleSystemFactory implements ModuleSystemFactory {
    * @param moduleRegistry - ModuleRegistry containing all detected modules
    * @returns GradleVersionUpdateStrategy instance configured with the repository root
    */
-  createVersionUpdateStrategy(
+  async createVersionUpdateStrategy(
     moduleRegistry: ModuleRegistry,
-  ): VersionUpdateStrategy {
+  ): Promise<VersionUpdateStrategy> {
     return new GradleVersionUpdateStrategy(this.repoRoot, moduleRegistry);
   }
 }
