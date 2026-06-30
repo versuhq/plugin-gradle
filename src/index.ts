@@ -13,7 +13,12 @@ const gradlePlugin: PluginContract = {
   adapters: [
     {
       id: "gradle",
-      adapterIdentifier: async(_configDirectory: string) => new GradleAdapterIdentifier(),
+      adapterIdentifierFactory: async(_configDirectory: string) => {
+        return { 
+          id: "gradle",
+          create: async () => new GradleAdapterIdentifier() 
+        };
+      },
       moduleSystemFactory: async(repoRoot: string, _configDirectory: string) =>
         new GradleModuleSystemFactory(repoRoot),
     },
