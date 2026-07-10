@@ -41,13 +41,13 @@ The plugin is automatically included with the GitHub Action. No separate install
 
 ### With @versu/core
 
+Once installed, the plugin is discovered automatically from `node_modules` (or list it explicitly in the `plugins` array of your `versu.config.js`):
+
 ```typescript
 import { VersuRunner } from '@versu/core';
-import gradlePlugin from '@versu/plugin-gradle';
 
 const runner = new VersuRunner({
   repoRoot: '/path/to/repository',
-  plugins: [gradlePlugin],
   adapter: 'gradle', // Optional - auto-detected
   // ...other options as needed
 });
@@ -61,7 +61,7 @@ The plugin is automatically loaded when installed globally:
 
 ```bash
 npm install -g @versu/plugin-gradle
-versu --adapter gradle
+versu run --adapter gradle
 ```
 
 ### With @versu/action
@@ -71,7 +71,7 @@ versu --adapter gradle
   run: npm install -g @versu/plugin-gradle
 
 - name: Version modules
-  uses: versuhq/versu@v0
+  uses: versuhq/versu@v3
   with:
     adapter: gradle
 ```
@@ -160,7 +160,7 @@ If `api` depends on `core`, and `core` gets a version bump, Versu will automatic
 
 ## Configuration
 
-The Gradle plugin respects all Versu configuration options. See the [core package documentation](../core#configuration) for details.
+The Gradle plugin respects all Versu configuration options. See the [configuration documentation](https://versuhq.github.io/guide/config/configuration-file) for details.
 
 ### Gradle-Specific Options
 
@@ -190,12 +190,12 @@ The plugin implements the Versu plugin contract:
 
 ```typescript
 export type PluginContract = {
-  id: string;
-  name: string;
-  description: string;
-  version: string;
-  author: string;
-  adapters: AdapterPluginContract[];
+  readonly id: string;
+  readonly name: string;
+  readonly description: string;
+  readonly version: string;
+  readonly authors: string[];
+  readonly adapters: AdapterPluginContract[];
 };
 ```
 
@@ -247,6 +247,6 @@ npm publish --access public
 
 ## License
 
-MIT License - see [LICENSE](../../LICENSE) for details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 [versu]: https://github.com/versuhq/versu
