@@ -8,7 +8,6 @@
     ".": "./dist/index.js"
   },
   "scripts": {
-    "prebuild": "node scripts/generate-version.js",
     "build": "tsc --project tsconfig.json --outDir dist && npm run copy-assets",
     "test": "vitest --passWithNoTests",
     "test:coverage": "vitest --coverage --passWithNoTests",
@@ -45,10 +44,10 @@
     "fast-glob": "^3.3.3"
   },
   "peerDependencies": {
-    "@versu/core": "^3.1.1"
+    "@versu/core": "^3.1.2"
   },
   "devDependencies": {
-    "@versu/core": "^3.1.1",
+    "@versu/core": "^3.1.2",
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.13.2",
     "@types/semver": "^7.7.1",
