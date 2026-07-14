@@ -8,6 +8,7 @@
     ".": "./dist/index.js"
   },
   "scripts": {
+    "prebuild": "node scripts/generate-version.js",
     "build": "tsc --project tsconfig.json --outDir dist && npm run copy-assets",
     "test": "vitest --passWithNoTests",
     "test:coverage": "vitest --coverage --passWithNoTests",
