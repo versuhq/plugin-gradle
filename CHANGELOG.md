@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- Next Version Placeholder -->
 
+## [2.0.5](https://github.com/versuhq/plugin-gradle/compare/v2.0.4...v2.0.5) - 2026-07-14
+
+### 🤖 Build
+
+- Update core to 3.2.0 ([3282247](https://github.com/versuhq/plugin-gradle/commit/3282247553f321b672031316234c6d348a4ae09b))
+
 ## [2.0.4](https://github.com/versuhq/plugin-gradle/compare/v2.0.3...v2.0.4) - 2026-07-14
 
 ### 🔁 CI
