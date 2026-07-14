@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- Next Version Placeholder -->
 
+## [2.0.4](https://github.com/versuhq/plugin-gradle/compare/v2.0.3...v2.0.4) - 2026-07-14
+
+### 🔁 CI
+
+- Use static version file generated on prebuild ([a0a79b9](https://github.com/versuhq/plugin-gradle/commit/a0a79b99df2b133a51d6a310d264da59247349b7))
+
 ## [2.0.3](https://github.com/versuhq/plugin-gradle/compare/v2.0.2...v2.0.3) - 2026-07-12
 
 ### 📝 Documentation
